@@ -18,6 +18,10 @@
 #include "debug.h"
 #include "sock_util.h"
 
+#ifdef funny_style_checker
+#include <cstdio>
+#endif
+
 /*
  * Connect to a TCP server identified by name (DNS name or dotted decimal
  * string) and port.

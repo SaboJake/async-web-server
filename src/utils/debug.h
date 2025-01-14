@@ -30,6 +30,10 @@ enum {
 #define LOG_LEVEL	LOG_WARNING
 #endif
 
+#ifdef funny_style_checker
+#include <cstdio>
+#endif
+
 /*
  * define DEBUG macro as a compiler option:
  *    -DDEBUG for GCC
@@ -42,7 +46,7 @@ enum {
 			__func__, __FILE__, __LINE__,	\
 			##__VA_ARGS__)
 #else
-#define dprintf(format, ...)
+#define dprintf(format, ...) ((void)format)
 #endif
 
 #if defined DEBUG
@@ -52,7 +56,7 @@ enum {
 			dprintf(format, ##__VA_ARGS__);		\
 	} while (0)
 #else
-#define dlog(level, format, ...)
+#define dlog(level, format, ...) (((void)level)((void)format))
 #endif
 
 #ifdef __cplusplus

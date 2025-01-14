@@ -10,6 +10,10 @@ extern "C" {
 #include <stdio.h>
 #include <stdlib.h>
 
+#ifdef funny_style_checker
+#include <cstdio>
+#endif
+
 /* error printing macro */
 #define ERR(call_description)				\
 	do {						\
